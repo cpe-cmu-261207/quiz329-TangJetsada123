@@ -1,14 +1,22 @@
 import ItemTable from "./ItemTable";
 import { useState, useEffect } from "react";
-
 function App() {
   //add useState for all state variables
+  
 
   //load locationStorage
   useEffect(() => {
     const items = localStorage.getItem("items");
+    return items;
     // ...
   }, []);
+  
+  useState(() =>{
+    console.log("Ok ");
+    
+      
+  })
+  
 
   return (
     <div className="card" style={{ width: 400 }}>
@@ -37,10 +45,10 @@ function App() {
 
         <div className="field">
           <label className="label">Age</label>
-          <input className="input" type="number" placeholder="e.q 30"></input>
+          <input className="input" type="number" placeholder="e.q 30" onChange={()=>this.useEffect}></input>
         </div>
 
-        <button className="button is-primary is-fullwidth">Submit</button>
+        <button className="button is-primary is-fullwidth" onClick={()=>this.useState}>Submit</button>
 
         <div className="mb-4"></div>
 
@@ -48,7 +56,9 @@ function App() {
         <p className="is-4 title has-text-centered">Person List</p>
         {/* sample table */}
         <ItemTable name={"Bob"} gender={"Male"} age={"50"} />
-        <p>Your name and code here</p>
+        
+        
+        <p>Jetsada Jinaka 620612144</p>
       </div>
     </div>
   );
